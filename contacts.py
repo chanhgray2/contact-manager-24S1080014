@@ -34,3 +34,43 @@ def main():
         print("Đã thêm liên hệ")
 
 main()
+# Danh sách toàn cục
+phonebook = []
+
+def add_contact(name, phone):
+    phonebook.append({
+        "name": name,
+        "phone": phone
+    })
+
+# Hiển thị danh bạ
+def view_contacts():
+    if len(phonebook) == 0:
+        print("Danh bạ trống")
+        return
+
+    for contact in phonebook:
+        print("Tên:", contact["name"], "- SĐT:", contact["phone"])
+# Danh sách toàn cục
+phonebook = []
+
+def add_contact(name, phone):
+    phonebook.append({
+        "name": name,
+        "phone": phone
+    })
+
+def view_contacts():
+    for contact in phonebook:
+        print("Tên:", contact["name"], "- SĐT:", contact["phone"])
+
+# Tìm kiếm liên hệ theo tên
+def search_contact(name):
+    found = False
+    for contact in phonebook:
+        if contact["name"] == name:
+            print("Số điện thoại:", contact["phone"])
+            found = True
+
+    if not found:
+        print("Không tìm thấy")
